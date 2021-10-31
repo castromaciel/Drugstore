@@ -1,8 +1,9 @@
+import ListCards from "./components/ListCards/ListCards";
 
 function App() {
   return (
-    <div className="App"> 
-      <h1>Hola Mundo</h1>
+    <div> 
+      <ListCards />
     </div>
   );
 }
