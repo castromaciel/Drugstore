@@ -1,8 +1,10 @@
-import ListCards from "./components/ListCards/ListCards";
+import Form from "./components/Form/Form";
+import ListCards from "./components/ListCards/ListCards"
 
 function App() {
   return (
-    <div> 
+    <div className="App"> 
+      <Form />
       <ListCards />
     </div>
   );
