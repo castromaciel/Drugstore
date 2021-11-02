@@ -1,8 +1,11 @@
+import Form from "./components/Form/Form";
+import ListCards from "./components/ListCards/ListCards"
 
 function App() {
   return (
     <div className="App"> 
-      <h1></h1>
+      <Form />
+      <ListCards />
     </div>
   );
 }
