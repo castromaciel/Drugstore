@@ -1,0 +1,40 @@
+.background-navbar{
+  font-weight: bold;
+}
+.item-navbar{
+  margin: 0.4rem;
+}
+.item-navbar:hover{
+  background-color: pink;
+  border-radius:10rem;
+}
+.nav-item{
+    border-radius: 10rem;
+    margin: 0.4rem;
+  }
+  .btn{
+    color: rgb(255, 255, 255)
+  }
+  .btn:hover{
+    background-color: rgb(253, 144, 208);
+    border:black;
+    color: white;
+  }
+  .nav-item:hover{
+          background-color: rgb(25, 181, 192);
+        }
+        i{
+          color:rgb(0, 0, 0)
+        }
+        i:hover{
+          color: rgba(0, 0, 0, 0.932)
+        }
+        .right-icons{
+          border-radius: 2rem;
+          margin-right:4rem; 
+          background-color: pink;
+        }
+        .i-right-icons:hover{
+          background-color: white;
+        }
+  
