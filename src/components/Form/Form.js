@@ -4,7 +4,7 @@ import Register from '../Register/Register'
 
 function Form() {
   return (
-    <div>
+    <div className="perfil">
       <div className="modal fade" id="loginModalToggle" aria-hidden="true" aria-labelledby="loginModalToggleLabel" tabIndex="-1">
         <div className="modal-dialog modal-dialog-centered">
           <div className="modal-content">
