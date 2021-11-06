@@ -12,16 +12,16 @@ function Navbar() {
             <div className="collapse navbar-collapse background-navbar" id="navbarNav">
               <ul className="navbar-nav m-4 background-navbar">
                 <li className="item-navbar">
-          <a className="nav-link active" aria-current="page" href="#">Home</a>
+          <a className="nav-link active" aria-current="page" href="/#">Home</a>
         </li>
         <li className="item-navbar">
-          <a className="nav-link active" href="#">Features</a>
+          <a className="nav-link active" href="/#">Features</a>
         </li>
         <li className="item-navbar">
-          <a className="nav-link active" href="#">Products</a>
+          <a className="nav-link active" href="/#">Products</a>
         </li>
         <li className="item-navbar">
-        <a className="nav-link active" href="#">Contact</a>
+        <a className="nav-link active" href="/#">Contact</a>
         </li>
       </ul>
     </div>
