@@ -5,8 +5,8 @@ import ListCards from "./components/ListCards/ListCards"
 function App() {
   return (
     <div className="App"> 
-    <Ban/>
-    <Navbar/>
+      <Ban/>
+      <Navbar/>
       <ListCards />
     </div>
   );
