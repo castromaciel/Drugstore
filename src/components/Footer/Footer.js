@@ -33,13 +33,13 @@ function Footer() {
   	 				  <a href="/#"><i className="bi bi-twitter"></i></a>
   	 				  <a href="/#"><i className="bi bi-instagram"></i></a>
   	 				  <a href="/#"><i className="bi bi-linkedin"></i></a>
-                <img src={ code } alt="QR"/>
+                <img src={ code } alt="QR" className="qr-img"/>
   	 			  </div>
   	 		  </div>
   	 	  </div>
   	  </div>
 			<div class="copyright">
-		   		<p>All right reserved by &copy;TeamFernet 2021</p>
+				<p>All right reserved by &copy;TeamFernet 2021</p>
 	   	</div>
     </footer>
   )

@@ -57,7 +57,7 @@ function ListCards() {
       <h2> Multiple items </h2>
       <div classNAme="d-flex justify-content-center">
         <Slider {...settings} className="mb-5 mt-4">
-          { products.slice(0,8).map((product,index) => 
+          { products.slice(0, products.length/3).map((product,index) => 
               (<div key={index}>
                 <Cards img={product.imgURL} name={product.name} brand={product.brand} index={index+1} />
               </div>)) }
@@ -65,7 +65,7 @@ function ListCards() {
       </div>
       <div classNAme="d-flex justify-content-center">
         <Slider {...settings} className="mb-5">
-          { products.slice(8,16).map((product,index) => 
+          { products.slice(products.length/3, 2*products.length/3).map((product,index) => 
               (<div key={index}>
                 <Cards img={product.imgURL} name={product.name} brand={product.brand} index={index+1} />
               </div>)) }
@@ -73,7 +73,7 @@ function ListCards() {
       </div>
       <div classNAme="d-flex justify-content-center">
         <Slider {...settings} className="mb-5">
-          { products.slice(16,24).map((product,index) => 
+          { products.slice(2*products.length/3, products.length).map((product,index) => 
               (<div key={index}>
                 <Cards img={product.imgURL} name={product.name} brand={product.brand} index={index+1} />
               </div>)) }
