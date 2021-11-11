@@ -4,6 +4,8 @@ import Info from '../Info/Info'
 import '../Info/Info.css'
 import Form from '../Form/Form'
 import '../Form/Form.css'
+import Fav from '../Fav/Fav'
+import '../Fav/Fav.css'
 
 function Navbar() {
     return (
@@ -28,7 +30,8 @@ function Navbar() {
     <div className=" right-icons" id="navbarSupportedContent">
       <ul className="navbar-nav me-auto mb-2 mb-lg-0">
         <li className="item-navbar i-right-icons">
-          <a className="nav-link" href="http://www.facebook.com"><i className="bi bi-star-fill"></i></a>
+          <a className="nav-link"><Fav/>
+          </a>
         </li>
         <li className="item-navbar i-right-icons">
           <a className="nav-link" href="http://www.twitter.com"><i className="bi bi-cart-fill"></i></a>
