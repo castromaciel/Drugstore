@@ -9,9 +9,6 @@ function ListCards({brand}) {
   const [products, setProducts] = useState([])
 
   let settings = {
-    autoplay: true,
-    autoplaySpeed: 12000, 
-    pauseOnHover: true,
     dots: true,
     infinite: false,
     speed: 500,
@@ -24,25 +21,28 @@ function ListCards({brand}) {
         settings: {
           slidesToShow: 3,
           slidesToScroll: 3,
-          infinite: false,
+          infinite: true,
           dots: true
         }
       },
       {
         breakpoint: 600,
         settings: {
-          dots: false,
           slidesToShow: 2,
           slidesToScroll: 2,
-          initialSlide: 2
+          initialSlide: 2,
+          infinite: true,
+          dots: false,
         }
       },
       {
         breakpoint: 480,
         settings: {
-          dots: false,
           slidesToShow: 1,
-          slidesToScroll: 1
+          slidesToScroll: 1,
+          infinite: true,
+          dots: false,
+
         }
       }
     ]
@@ -55,7 +55,7 @@ function ListCards({brand}) {
   }, []);
 
   return (
-    <div className="container">
+    <div className="px-5 container d-flex flex-column justify-content-center">
       <h2 className="text-center mt-3"> Productos disponibles </h2>
       {brand? 
           <Slider {...settings} className="mb-5 mt-4">

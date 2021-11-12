@@ -10,9 +10,9 @@ function Cards( {img, name, brand, index} ) {
   const handleFavourites = () => isFavourite? setIsFavourite(false) : setIsFavourite(true) 
   
   return (
-    <div className="d-flex justify-content-center flex-column align-items-center">
-      <div class="card position-relative" onMouseOver={handleMouseOver} onMouseLeave={handleMouseLeave} >
-        <img src={img} class="card-img-top"alt={name} />
+    <div className="d-flex flex-column align-items-center">
+      <div className="card position-relative" onMouseOver={handleMouseOver} onMouseLeave={handleMouseLeave} >
+        <img src={img} className="card-img-top"alt={name} />
         {isHovering &&
           <div>
             <div className="position-absolute top-0 end-0 btn btn-sm" onClick={handleFavourites}>

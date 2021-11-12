@@ -2,8 +2,8 @@ import React, { useState } from 'react'
 import { useForm } from 'react-hook-form';
 import './login.css'
 
-
 function Login() {
+
   const[logged,setLogged] = useState(true)
   const { register, handleSubmit, formState: {errors} } = useForm({ defaultValues: { email: "", password: ""} });
 
@@ -19,14 +19,13 @@ function Login() {
         'Content-type': 'application/json; charset=UTF-8',
       },
     })
-      .then(res => {
-        return res.json()
-      })
+      .then(res => {return res.json()})
       .then(json => {
         if(json.token){
           localStorage.setItem('token', json.token)
-          console.log(localStorage.getItem('token'))
+          localStorage.setItem('user', JSON.stringify(json.userdata))
           setLogged(true)
+          window.location.replace('')
         }else{
           setLogged(false)
         }
