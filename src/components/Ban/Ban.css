@@ -2,11 +2,10 @@
   background: rgb(128,185,165);
   background: linear-gradient(90deg, rgba(128,185,165,1) 0%, rgba(107,222,251,1) 0%, rgba(86,215,178,1) 54%, rgba(120,236,123,1) 100%);
   color: black;
-  max-height: 12rem;
 }
 .logo{
-  width:20rem;
-  height: 20rem;
+  width:64px;
+  height: 64px;
   filter: drop-shadow(0 2px 5px rgba(23, 59, 61, 0.849));
 }
 .nav-item{
@@ -14,28 +13,31 @@
   margin: 0.4rem;
   color:white;
 }
-.btn{
-  color: rgb(255, 255, 255)
-}
-.btn:hover{
-  background-color: rgb(253, 144, 208);
-  border:black;
-  color: white;
-}
 .nav-item:hover{
   background-color: rgb(25, 181, 192);
 }
-i{
-  color:rgb(0, 0, 0)
-}
-i:hover{
-  color: rgb(255, 255, 255)
-}
 .right-icons{
   border-radius: 2rem;
-  margin-right:4rem;
   background-color: pink;
 }
 .i-right-icons:hover{
   background-color: white;
+}
+.offcanvas-body .btn-outline-pink{
+  border: 1px solid white;
+  color: white;
+  background-color: transparent;
+
+}
+.offcanvas-body .btn-outline-pink:hover{
+  border: 1px solid pink;
+  color: white;
+  background-color: pink;
+}
+
+@media only screen and (max-width: 992px){
+  .offcanvas-body .btn-outline-pink{
+    border: 1px solid pink;
+    color: pink;
+  }
 }
