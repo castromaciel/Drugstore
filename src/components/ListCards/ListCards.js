@@ -4,13 +4,15 @@ import Cards from '../Cards/Cards'
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 
-function ListCards({brand}) {
+function ListCards({brand, setUpdateFavs, setFavCount}) {
   
   const userLog = JSON.parse(localStorage.getItem('user'))
   const [products, setProducts] = useState([])
   const [favItems, setFavItems] = useState()
-  const handleCallback = async (idCallback) =>{
+  
+  const handleCallback = (idCallback) =>{
     let fav = favItems.some( (a) => a === idCallback )
+    setUpdateFavs(prev => !prev)
     if(fav) setFavItems(favItems.filter(a =>  a !== idCallback))
     else setFavItems([...favItems, idCallback]); 
   }
@@ -68,19 +70,19 @@ function ListCards({brand}) {
 
   useEffect(() => {
     if(favItems) {
-    fetch(`http://localhost:8000/users/${userLog.id}`,{
-      method:'PUT',
-      body: JSON.stringify({
-        favs: favItems
-      }),
-      headers: {
-        'Content-type': 'application/json; charset=UTF-8',
-      },
-    })
-      .then(res => res.json())
-      .then(json => console.log('posted', favItems))  
-  }
-  },[userLog?.id,favItems])
+      fetch(`http://localhost:8000/users/${userLog.id}`,{
+        method:'PUT',
+        body: JSON.stringify({
+          favs: favItems
+        }),
+        headers: {
+          'Content-type': 'application/json; charset=UTF-8',
+        },
+      })
+        .then(res => res.json())
+        .then(json => setFavCount(favItems.length))  
+    }
+  },[userLog?.id,setFavCount,favItems])
 
   return (
     <div className="px-5 container d-flex flex-column justify-content-center">

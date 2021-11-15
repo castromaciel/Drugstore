@@ -3,7 +3,7 @@ import { useState } from 'react'
 import CategoriesButton from '../CategoriesButton/CategoriesButton'
 import ListCards from '../ListCards/ListCards'
 
-function Products() {
+function Products({setUpdateFavs, setFavCount}) {
 
   const [filter,setFilter] = useState("")
   const receiveFilter = e => setFilter(e.target.value)
@@ -11,7 +11,7 @@ function Products() {
   return (
     <div>
       <CategoriesButton handleChange={receiveFilter}/> 
-      <ListCards brand={filter}/>
+      <ListCards brand={filter} setFavCount={setFavCount} setUpdateFavs={setUpdateFavs}/>
     </div>
   )
 }
