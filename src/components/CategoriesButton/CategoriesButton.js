@@ -13,11 +13,11 @@ function CategoriesButton({handleChange}) {
   },[])
   
   return (
-    <div className="container d-flex justify-content-end">
+    <div className="mt-3 container d-flex justify-content-end">
       <div className="col-10 col-md-4 col-lg-4">
         <div className="input-group ">
           <select className="form-select" id="inputGroupSelect04" defaultValue="" aria-label="Example select with button addon" onChange={handleChange}>
-            <option value="" index='0' selected>Filtrar por marcas...</option>
+            <option defaultValue="" index='0' selected>Filtrar por marcas...</option>
             { brands.map( brand => <option key={brand} defaultValue={brand} >{brand}</option>)}
           </select>
         </div>

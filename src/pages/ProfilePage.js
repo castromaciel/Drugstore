@@ -1,17 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Ban from '../components/Ban/Ban'
 import Footer from '../components/Footer/Footer'
-import Navbar from '../components/Nav/Navbar'
+import Navbar from '../components/Navbar/Navbar'
 
-function profilePage() {
+function ProfilePage() {
+  const [favCount, setFavCount] = useState()
+
   return (
     <div>
       <Ban />
-      <Navbar />
+      <Navbar favCount={favCount} setFavCount={setFavCount} />
       <h1>Profile</h1>
       <Footer />
     </div>
   )
 }
 
-export default profilePage
+export default ProfilePage

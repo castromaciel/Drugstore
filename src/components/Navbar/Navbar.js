@@ -5,9 +5,9 @@ import Form from '../Form/Form'
 import { NavLink } from 'react-router-dom'
 import UserLogged from '../UserLogged/UserLogged'
 
-function Navbar() {
+function Navbar({updateFavs, favCount, setFavCount}) {
 
-  const [favCount, setFavCount] = useState()
+  // const [favCount, setFavCount] = useState()
   const [cartCount, setCartCount] = useState() 
   const [isLogged, setIsLogged] = useState(false)
   const token = localStorage.getItem('token')
@@ -18,8 +18,8 @@ function Navbar() {
       fetch(`http://localhost:8000/users/${userLog.id}`)
         .then(res => res.json())
         .then(user => setFavCount(user.favs.length))
-    }
-  },[token, setIsLogged, userLog?.id, setFavCount, favCount])
+      }
+  },[token, setIsLogged, userLog?.id, setFavCount, updateFavs])
 
   return (
     <div>
