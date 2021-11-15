@@ -5,9 +5,16 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 function ListCards({brand}) {
-
+  
+  const userLog = JSON.parse(localStorage.getItem('user'))
   const [products, setProducts] = useState([])
-
+  const [favItems, setFavItems] = useState()
+  const handleCallback = async (idCallback) =>{
+    let fav = favItems.some( (a) => a === idCallback )
+    if(fav) setFavItems(favItems.filter(a =>  a !== idCallback))
+    else setFavItems([...favItems, idCallback]); 
+  }
+  
   let settings = {
     dots: true,
     infinite: false,
@@ -46,13 +53,34 @@ function ListCards({brand}) {
         }
       }
     ]
-  };
-
+  }
   useEffect(() => {
     fetch('http://localhost:8000/products')
-      .then(response => response.json())
-      .then(data => setProducts(data));
-  }, []);
+      .then(res => res.json())
+      .then(data => setProducts(data))
+    if(userLog){
+      fetch(`http://localhost:8000/users/${userLog.id}`)
+        .then(res => res.json())
+        .then(data => setFavItems(data.favs))
+    }
+    // eslint-disable-next-line
+  }, [setProducts])
+
+  useEffect(() => {
+    if(favItems) {
+    fetch(`http://localhost:8000/users/${userLog.id}`,{
+      method:'PUT',
+      body: JSON.stringify({
+        favs: favItems
+      }),
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+      },
+    })
+      .then(res => res.json())
+      .then(json => console.log('posted', favItems))  
+  }
+  },[userLog?.id,favItems])
 
   return (
     <div className="px-5 container d-flex flex-column justify-content-center">
@@ -60,26 +88,26 @@ function ListCards({brand}) {
       {brand? 
           <Slider {...settings} className="mb-5 mt-4">
           {products.filter(product => product.brand === brand).map( (product,index) =>
-            (<Cards img={product.imgURL} name={product.name} brand={product.brand} index={index} />)
+            (<Cards img={product.imgURL} name={product.name} brand={product.brand} index={index} id={product._id} parentCallback={handleCallback} favs={favItems}/>)
           )}
           </Slider> :
         (<section>
             <Slider {...settings} className="mb-5 mt-4">
               { products.slice(0, products.length/3).map((product,index) => 
                   (<div key={index}>
-                    <Cards img={product.imgURL} name={product.name} brand={product.brand} index={index+1} />
+                    <Cards img={product.imgURL} name={product.name} brand={product.brand} index={index+1} id={product._id} parentCallback = {handleCallback} favs={favItems}/>
                   </div>)) }
             </Slider>
             <Slider {...settings} className="mb-5">
               { products.slice(products.length/3, 2*products.length/3).map((product,index) => 
                   (<div key={index}>
-                    <Cards img={product.imgURL} name={product.name} brand={product.brand} index={index+1} />
+                    <Cards img={product.imgURL} name={product.name} brand={product.brand} index={index+1} id={product._id} parentCallback = {handleCallback} favs={favItems}/>
                   </div>)) }
             </Slider>
             <Slider {...settings} className="mb-5">
               { products.slice(2*products.length/3, products.length).map((product,index) => 
                   (<div key={index}>
-                    <Cards img={product.imgURL} name={product.name} brand={product.brand} index={index+1} />
+                    <Cards img={product.imgURL} name={product.name} brand={product.brand} index={index+1} id={product._id} parentCallback = {handleCallback} favs={favItems}/>
                   </div>)) }
             </Slider>
         </section>) 
