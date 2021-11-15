@@ -1,0 +1,31 @@
+.carousel-caption{
+    position: absolute;
+    background: rgba(0, 0, 0, 0.568);
+    right: 10%;
+    bottom: 36.25rem;
+    left: 80%;
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 0 5px 25px;
+    width: 200px;
+}
+@media(max-width: 1000px){
+    .carousel-caption{
+        left: 75%;
+    }
+}
+@media(max-width: 808px){
+    .carousel-caption{
+        left: 65%;
+    }
+}
+@media(max-width: 575px){
+    .carousel-caption{
+        left: 55%;
+    }
+}
+@media(max-width: 447px){
+    .carousel-caption{
+        left: 45%;
+    }
+}
