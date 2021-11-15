@@ -5,7 +5,7 @@ import './register.css'
 function Register() {
   
   const[registerErrors,setRegisterErrors] = useState([])
-  const {register, handleSubmit, formState: {errors}, getValues  } = useForm({ defaultValues: { username:"", email:"", emailConfirmation:"", password:"", passwordConfirmation:""}})
+  const {register, handleSubmit, formState: {errors}, getValues } = useForm({ defaultValues: { username:"", email:"", emailConfirmation:"", password:"", passwordConfirmation:""}})
 
   const onSubmit = data => {
 
@@ -22,9 +22,9 @@ function Register() {
     })
       .then(res => res.json())
       .then(json => {
+        console.log(json)
         setRegisterErrors(json.errors)
       })  
-   
   }
   return (
     <div>
@@ -50,17 +50,17 @@ function Register() {
           </div>
           <div className="ms-lg-2 pt-2 form-group w-100">
             <h5 className="ps-2">Confirm your email</h5>
-            <input type="email" className="form-control" placeholder="example@example.com" name="emailConfirmation"  {...register("emailConfirmation", {required: true, validate:
+            <input type="email" className="form-control" placeholder="example@example.com" name="emailConfirmation"  {...register("emailConfirmation", {required: true, pattern:/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/, validate:
               {
                 matchesPreviousEmail: (value) => 
                 {
                   const { email } = getValues();
-                  return email === value || <i className="bi bi-exclamation-octagon-fill me-2"></i>
+                  return (email !== "" && email === value)
                 }
-              },})} />
+              }})} />
             {errors?.emailConfirmation?.type === "required" && <span><i className="bi bi-exclamation-octagon-fill me-2"></i>This field is required</span>}
-            {errors?.email?.type === 'pattern' && <span><i className="bi bi-exclamation-octagon-fill me-2"></i>Insert a valid mail</span> }
-            {errors.emailConfirmation && <span>{errors.emailConfirmation.message}Email should match!</span>}
+            {errors?.emailConfirmation?.type === 'pattern' && <span><i className="bi bi-exclamation-octagon-fill me-2"></i>Insert a valid mail</span> }
+            {errors?.emailConfirmation?.type === 'matchesPreviousEmail' && <span><i className="bi bi-exclamation-octagon-fill me-2"></i>Email should match!</span>}
             
           </div>
         </div>
@@ -79,13 +79,13 @@ function Register() {
               {
                 matchesPreviousPassword: (value) => 
                 { const { password } = getValues();
-                  return password === value || <i className="bi bi-exclamation-octagon-fill me-2"></i>
+                  return (password !== "" && password === value)
                 }
               },
             })} />
             {errors?.passwordConfirmation?.type === "required" && <span><i className="bi bi-exclamation-octagon-fill me-2"></i>This field is required</span>}
             {errors?.passwordConfirmation?.type === "minLength" && <span><i className="bi bi-exclamation-octagon-fill me-2"></i>Password must be at least 8 characters long</span>}
-            {errors.passwordConfirmation && <span>{errors.passwordConfirmation.message}Password should match!</span>}
+            {errors?.passwordConfirmation?.type === 'matchesPreviousPassword' && <span><i className="bi bi-exclamation-octagon-fill me-2"></i>Password should match!</span>}
           </div>
         </div>
         <div className="mx-auto pt-2 form-group d-flex justify-content-end">
