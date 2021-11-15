@@ -16,9 +16,9 @@ function UserLogged({user}) {
         <h5 className="my-0">{user.username}</h5>
       </button>
       <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton1">
-        <li><NavLink exact to='/profile'className="dropdown-item">Profile</NavLink></li>
+        <li><NavLink exact to='/profile' activeClassName="" className="dropdown-item">Profile</NavLink></li>
         <hr className="my-0 mx-2" />
-        <li><NavLink to='/' className="dropdown-item" onClick={logout}>Logout</NavLink></li>
+        <li><NavLink to='/' className="dropdown-item" activeClassName="" onClick={logout}>Logout</NavLink></li>
       </ul>
     </div>
   )
