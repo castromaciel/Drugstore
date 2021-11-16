@@ -1,5 +1,5 @@
 import React from 'react'
-import './info.css'
+import './Info.css'
 function Info() {
     return (
      <div className="nav-link">

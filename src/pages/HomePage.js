@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import Ad from '../components/Ad/Ad'
 import Ban from '../components/Ban/Ban'
 import Nav from '../components/Navbar/Navbar'
 import Products from '../components/Products/Products'
@@ -16,6 +17,7 @@ function HomePage() {
       <Nav favCount={favCount} setFavCount={setFavCount} updateFavs={updateFavs}/>
       <Carousel />
       <Products setFavCount={setFavCount} setUpdateFavs={setUpdateFavs}/>
+      <Ad />
       <ToTopButton />
       <Footer />
     </div>

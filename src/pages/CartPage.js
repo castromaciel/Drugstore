@@ -2,6 +2,7 @@ import React,{useState} from 'react'
 import Ban from '../components/Ban/Ban'
 import Footer from '../components/Footer/Footer'
 import Navbar from '../components/Navbar/Navbar'
+import ToTopButton from '../components/ToTopButton/ToTopButton'
 
 function CartPage() {
   const [favCount, setFavCount] = useState()
@@ -9,7 +10,10 @@ function CartPage() {
     <div>
       <Ban />
       <Navbar favCount={favCount} setFavCount={setFavCount}/>
-      <h1>Cart</h1>
+      <div className="my-5 py-5 ">
+        <h1 className="text-center">No la pudimos hacer! 😞</h1>
+      </div>
+      <ToTopButton />
       <Footer/>
     </div>
   )
