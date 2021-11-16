@@ -26,9 +26,7 @@ function Login() {
           localStorage.setItem('user', JSON.stringify(json.userdata))
           setLogged(true)
           window.location.replace('')
-        }else{
-          setLogged(false)
-        }
+        }else setLogged(false)
       })  
   }
 

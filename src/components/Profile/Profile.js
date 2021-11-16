@@ -8,11 +8,11 @@ function Profile() {
   const [auxUser, setAuxUser] = useState({})
   const {register, handleSubmit, formState: {errors} } = useForm()
   
-  const onSubmit = data => {
-    fetch(`http://localhost:8000/users/${userLog.id}`,{
+  const onSubmit = async data => {
+    await fetch(`http://localhost:8000/users/${userLog.id}`,{
       method: 'PUT',
       body: JSON.stringify({
-        img: data.prophilephoto,
+        img: data.profilephoto,
         nameSurname: data.nameSurname,
         postalcode:data.postalcode,
         province: data.province,
@@ -27,7 +27,10 @@ function Profile() {
       },
     })
       .then(res => res.json())
-      .then(json => setDisabled(true))  
+      .then(json => {
+        localStorage.setItem('user', JSON.stringify(json.userdata))
+        setDisabled(true)
+      })  
   }
 
   useEffect(() => {
@@ -59,7 +62,7 @@ function Profile() {
                   </div>
                   <div className="col-lg-12 mx-auto pt-3 form-group">
                     <h5 className="ps-2">Profile photo</h5>
-                    <input type="text" className="form-control" disabled={disabled} value ={auxUser.img}placeholder="url de imagen" name="profilephoto" {...register("profilephoto", {required: true})} 
+                    <input type="text" className="form-control" disabled={disabled} value ={auxUser.img} placeholder="url de imagen" name="profilephoto" {...register("profilephoto", {required: true})} 
                     onChange={(e) => setAuxUser({...auxUser, img: e.target.value}) }/>
                     {errors?.profilephoto?.type === "required" && <span><i className="bi bi-exclamation-octagon-fill me-2"></i>Este campo es obligatorio</span>}
                   </div>
