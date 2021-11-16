@@ -7,7 +7,6 @@ import UserLogged from '../UserLogged/UserLogged'
 
 function Navbar({updateFavs, favCount, setFavCount}) {
 
-  const [cartCount, setCartCount] = useState() 
   const [isLogged, setIsLogged] = useState(false)
   const token = localStorage.getItem('token')
   const userLog = JSON.parse(localStorage.getItem('user'))
@@ -51,9 +50,7 @@ function Navbar({updateFavs, favCount, setFavCount}) {
               </li>
               <li className="m-1 item-navbar i-right-icons px-3 fs-5">
                 <NavLink exact to='/cart' className="nav-link" >
-                  <i className="bi bi-cart-fill position-relative">
-                    <span className="position-absolute top-0 end-0 translate-middle badge rounded-pill bg-light text-dark border">{cartCount}</span>
-                  </i>
+                  <i className="bi bi-cart-fill position-relative"></i>
                 </NavLink>
               </li>
               <li className="m-1 item-navbar i-right-icons px-3 fs-5">

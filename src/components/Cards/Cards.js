@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import { NavLink } from 'react-router-dom';
+import swal from 'sweetalert';
 import "../Cards/cards.css";
-
 function Cards( {parentCallback ,img, name, brand, index, id, favs} ) {
 
   const [isHovering, setIsHovering] = useState(false)
@@ -9,7 +9,7 @@ function Cards( {parentCallback ,img, name, brand, index, id, favs} ) {
   const handleMouseOver = () => setIsHovering(true)
   const handleMouseLeave = () => setIsHovering(false)
   const onClickFavourite = (e) => {
-    if(!localStorage.getItem('token')) return alert('Inicia sesión, pibe')
+    if(!localStorage.getItem('token')) return swal("¡No se pudo agregar a favoritos!", "Prueba iniciando sesión 😉", "error");
     isFavourite? setIsFavourite(false) : setIsFavourite(true)
     parentCallback(e.target.dataset.id);
     e.preventDefault();
