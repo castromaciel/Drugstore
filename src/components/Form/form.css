@@ -1,0 +1,19 @@
+.modal-header.form{
+  background-color:rgba(120,236,123,1);
+  color:white;
+}
+.back-to-login{
+  cursor: pointer;
+  padding: .25rem;
+  border-radius: .5rem;
+  transition: all ease-in-out 200ms;
+}
+.back-to-login:hover{
+  background-color: rgba(120,236,123,1);
+}
+.register-link{
+  color: rgb(253, 153, 169);
+}
+.register-link:hover{
+  color: rgb(233, 107, 128);
+}

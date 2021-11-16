@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import './Navbar.css'
+import './navbar.css'
 import Info from '../Info/Info'
 import Form from '../Form/Form'
 import { NavLink } from 'react-router-dom'
@@ -30,13 +30,13 @@ function Navbar({updateFavs, favCount, setFavCount}) {
                 <a className="nav-link active" aria-current="page" href="/#"><i className="bi bi-house pe-1"></i>Inicio</a>
               </li>
               <li className="m-1 item-navbar">
-                <a className="nav-link active" href="/#"><i className="bi bi-stars pe-1"></i>Destacados</a>
+                <a className="nav-link active" href="/#destacados"><i className="bi bi-stars pe-1"></i>Destacados</a>
               </li>
               <li className="m-1 item-navbar">
-                <a className="nav-link active" href="/#"><i className="bi bi-bag-check-fill pe-1"></i>Productos</a>
+                <a className="nav-link active" href="/#productos"><i className="bi bi-bag-check-fill pe-1"></i>Productos</a>
               </li>
               <li className="m-1 item-navbar">
-                <a className="nav-link active" href="/#"><i className="bi bi-briefcase-fill pe-1"></i>Contacto</a>
+                <a className="nav-link active" href="/#contacto"><i className="bi bi-briefcase-fill pe-1"></i>Contacto</a>
               </li>
             </ul>
           </div>

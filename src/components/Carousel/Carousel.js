@@ -7,7 +7,7 @@ import oferta_biol_do from '../../assets/img/oferta_biol_do.jpeg'
 
 function Carousel() {
   return (
-    <div>
+    <div id="destacados">
       <div id="heroIndicators" className="carousel slide" data-bs-ride="carousel">
         <div className="carousel-indicators">
           <button type="button" data-bs-target="#heroIndicators" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>

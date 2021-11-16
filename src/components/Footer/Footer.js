@@ -1,11 +1,11 @@
 import React from 'react'
 import './footer.css'
-import code from '../../assets/img/code.png'
+import qr_afip from '../../assets/img/qr_afip.jpeg'
 import { NavLink } from 'react-router-dom'
 
 function Footer() {
   return (
-    <footer className="bg-footer">
+    <footer className="bg-footer" id="contacto">
       <div className="container pt-3">
   	 	  <div className="row">
   	 		  <div className="footer-col">
@@ -15,15 +15,15 @@ function Footer() {
   	 			  <h4>Ayuda</h4>
   	 			  <ul className="mt-3 mt-md-0 d-flex d-md-inline">
   	 				  <li><a href="/#">Comprar</a></li>
-  	 				  <li><a href="/#">Vender</a></li>
-  	 				  <li><a href="/#">Problemas</a></li>
+  	 				  <li><NavLink exact to='/error404'>Vender</NavLink></li>
+  	 				  <li><NavLink exact to='/error404'>Problemas</NavLink></li>
   	 			  </ul>
   	 		  </div>
   	 		  <div className="footer-col">
   	 			  <h4>Acerca de</h4>
   	 			  <ul className="mt-3 mt-md-0 d-flex d-md-inline">
-  	 				  <li><a href="/#">Oásis Ds</a></li>
-  	 				  <li><a href="/#">Destacados</a></li>
+  	 				  <li><NavLink exact to='/error404'>Oásis Ds</NavLink></li>
+  	 				  <li><NavLink exact to='/error404'>Destacados</NavLink></li>
   	 			  </ul>
   	 		  </div>
   	 		  <div className="footer-col">
@@ -35,7 +35,7 @@ function Footer() {
 								<li><a href="http://www.instagram.com"><i className="bi bi-instagram"></i></a></li>
 							 </ul>
   	 			  </div>
-						<NavLink exact to='/error404' className="d-flex justify-content-center" title="Data fiscal"><img src={ code } alt="QR" className="qr-img col-4 col-lg-4"/></NavLink>
+						<NavLink exact to='/Error404' className="d-flex justify-content-center" title="Data fiscal"><img src={ qr_afip } alt="QR" className="qr-img col-4 col-lg-4"/></NavLink>
   	 		  </div>
   	 	  </div>
   	  </div>
