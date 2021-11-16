@@ -3,6 +3,7 @@ import Ban from '../components/Ban/Ban'
 import Footer from '../components/Footer/Footer'
 import Navbar from '../components/Navbar/Navbar'
 import Profile from '../components/Profile/Profile'
+import ToTopButton from '../components/ToTopButton/ToTopButton'
 
 function ProfilePage() {
   const [favCount, setFavCount] = useState()
@@ -12,6 +13,7 @@ function ProfilePage() {
       <Ban />
       <Navbar favCount={favCount} setFavCount={setFavCount} />
       <Profile />
+      <ToTopButton />
       <Footer />
     </div>
   )

@@ -4,3 +4,14 @@
   padding-top: .25rem;
   margin: 0;
 }
+.btn.btn-outline-pink-login{
+  border: 1px solid rgb(253, 153, 169);
+  color: rgb(253, 153, 169);
+  background-color: transparent;
+
+}
+.btn.btn-outline-pink-login:hover{
+  border: 1px solid rgb(253, 153, 169);
+  color: white;
+  background-color: rgb(253, 153, 169);
+}

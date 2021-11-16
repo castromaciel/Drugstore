@@ -35,24 +35,24 @@ function Login() {
   return (
     <div>
       <form className="container" onSubmit={handleSubmit(onSubmit)}>
-          <div className="mx-auto pt-2 form-group">
-            <h5 className="ps-2">Email address</h5>
-            <input type="email" className="form-control" placeholder="example@example.com" name="email" {...register("email", { required: true })} />
-            {errors?.email?.type === "required" && <span><i className="bi bi-exclamation-octagon-fill me-2"></i>This field is required</span>}
+        <div className="mx-auto pt-2 form-group">
+          <h5 className="ps-2">Correo electrónico</h5>
+          <input type="email" className="form-control" placeholder="example@example.com" name="email" {...register("email", { required: true })} />
+          {errors?.email?.type === "required" && <span><i className="bi bi-exclamation-octagon-fill me-2"></i>Este campo es obligatorio</span>}
+        </div>
+        <div className="mx-auto pt-2 form-group">
+          <h5 className="ps-2">Contraseña</h5>
+          <input type="password" className="form-control" placeholder="Contraseña" name="password" {...register("password", {required: true})} />
+          {errors?.password?.type === "required" && <span ><i className="bi bi-exclamation-octagon-fill me-2"></i>Este campo es obligatorio</span>}
+        </div>
+        {logged?  true : (
+          <div className="form-group fs-5 d-flex justify-content-center">
+            <span><i className="bi bi-exclamation-octagon-fill me-2"></i>Email or Password invalids.</span>
           </div>
-          <div className="mx-auto pt-2 form-group">
-            <h5 className="ps-2">Password</h5>
-            <input type="password" className="form-control" placeholder="Password" name="password" {...register("password", {required: true})} />
-            {errors?.password?.type === "required" && <span ><i className="bi bi-exclamation-octagon-fill me-2"></i>This field is required</span>}
-          </div>
-          {logged?  true : (
-            <div className="form-group fs-5 d-flex justify-content-center">
-              <span><i className="bi bi-exclamation-octagon-fill me-2"></i>Email or Password invalids.</span>
-            </div>
-          )}
-          <div className="mx-auto pt-2 form-group d-flex justify-content-end">
-            <input type="submit" className="mt-2 btn btn-primary" value="Iniciar sesión" />
-          </div>
+        )}
+        <div className="mx-auto pt-2 form-group d-flex justify-content-end">
+          <input type="submit" className="mt-2 btn btn-outline-pink-login" value="Iniciar sesión" />
+        </div>
       </form>
     </div>
   )

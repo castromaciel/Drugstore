@@ -9,7 +9,7 @@ function Products({setUpdateFavs, setFavCount}) {
   const receiveFilter = e => setFilter(e.target.value)
 
   return (
-    <div>
+    <div id="productos">
       <CategoriesButton handleChange={receiveFilter}/> 
       <ListCards brand={filter} setFavCount={setFavCount} setUpdateFavs={setUpdateFavs}/>
     </div>

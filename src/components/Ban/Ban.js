@@ -1,11 +1,11 @@
 import React from 'react';
-import './Ban.css';
+import './ban.css';
 import logo from '../../assets/img/logo.png'
 import { NavLink } from 'react-router-dom';
 
 function Ban() {
   return (
-    <div>
+    <div id="inicio">
       <nav className="navbar navbar-expand-lg navbar-light bg-light background-ban fixed-top">
         <div className="container-fluid d-sm-flex align-items-center ">
           <NavLink className="ms-4 navbar-brand" exact to={'/'}><img className="logo" src={logo} alt="logo"/></NavLink>
@@ -21,20 +21,20 @@ function Ban() {
             <div className="offcanvas-body d-lg-flex align-items-center">
               <form className="d-flex mt-3 mt-lg-0">
                 <input className="form-control me-2" type="search" placeholder="Buscá producto, marca" aria-label="Search"/>
-                <button className="btn btn-outline-pink">Buscar</button>
+                <button className="btn btn-outline-pink" type="button">Buscar</button>
               </form>
               <ul className="d-lg-none navbar-nav">
                 <li className="my-2 item-navbar">
-                  <a className="nav-link active" aria-current="page" href="/#"><i className="bi bi-house pe-1"></i>Inicio</a>
+                  <a className="nav-link active px-3" aria-current="page" href="/#"><i className="bi bi-house pe-1"></i>Inicio</a>
                 </li>
                 <li className="my-2 item-navbar">
-                  <a className="nav-link active" href="/#"><i className="bi bi-stars pe-1"></i>Destacados</a>
+                  <a className="nav-link active px-3" href="/#destacados"><i className="bi bi-stars pe-1"></i>Destacados</a>
                 </li>
                 <li className="my-2 item-navbar">
-                  <a className="nav-link active" href="/#"><i className="bi bi-bag-check-fill pe-1"></i>Productos</a>
+                  <a className="nav-link active px-3" href="/#productos"><i className="bi bi-bag-check-fill pe-1"></i>Productos</a>
                 </li>
                 <li className="my-2 item-navbar">
-                  <a className="nav-link active" href="/#"><i className="bi bi-briefcase-fill pe-1"></i>Contacto</a>
+                  <a className="nav-link active px-3" href="/#contacto"><i className="bi bi-briefcase-fill pe-1"></i>Contacto</a>
                 </li>
               </ul>
             </div>
