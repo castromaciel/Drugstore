@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useForm } from 'react-hook-form'
+import swal from 'sweetalert'
 import './register.css'
 
 function Register() {
@@ -24,7 +25,7 @@ function Register() {
       .then(json => {
         setregisterErrors(json.errors)
         if(json === "created") {
-          alert("Usuario creado con éxito")
+          swal("¡Buen trabajo!","Usuario creado con éxito","success")
           window.location.replace('')
         }
       })  
