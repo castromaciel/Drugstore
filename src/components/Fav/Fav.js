@@ -46,7 +46,7 @@ useEffect(() => {
 },[userLog?.id,loadFavs,setFavCount])
   return (
     <div className="container">
-      {loadFavs?.length > 0? <h1>Favoritos</h1> : <h1 className="mb-5 pb-5">No hay elementos en Favoritos</h1>}
+      {loadFavs?.length > 0? <h1>Favoritos</h1> : <h1 className="my-5 py-5 text-center">No hay elementos en Favoritos 😞</h1>}
       {
         itemFav?.map((p,index) =>
           <section className="my-1 py-2 d-flex flex-column flex-lg-row align-items-center justify-content-lg-around" key={index}>

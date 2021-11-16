@@ -30,9 +30,9 @@ function Footer() {
   	 			  <h4>Síguenos!</h4>
   	 			  <div className="pt-2 d-flex row social-links justify-content-center">
 							 <ul className="d-flex justify-content-evenly mb-0 pb-1">
-								<li><a href="http://www.facebook.com"><i className="bi bi-facebook"></i></a></li>
-								<li><a href="http://www.twitter.com"><i className="bi bi-twitter"></i></a></li>
-								<li><a href="http://www.instagram.com"><i className="bi bi-instagram"></i></a></li>
+								<li><a href="http://www.facebook.com" target="_blank" rel="noreferrer"><i className="bi bi-facebook"></i></a></li>
+								<li><a href="http://www.twitter.com" target="_blank" rel="noreferrer"><i className="bi bi-twitter"></i></a></li>
+								<li><a href="http://www.instagram.com" target="_blank" rel="noreferrer"><i className="bi bi-instagram"></i></a></li>
 							 </ul>
   	 			  </div>
 						<NavLink exact to='/Error404' className="d-flex justify-content-center" title="Data fiscal"><img src={ qr_afip } alt="QR" className="qr-img col-4 col-lg-4"/></NavLink>

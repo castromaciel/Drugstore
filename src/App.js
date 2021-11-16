@@ -5,6 +5,7 @@ import HomePage from './pages/HomePage'
 import ProductPage from './pages/ProductPage'
 import ProfilePage from "./pages/ProfilePage";
 import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
+import ErrorPage from "./pages/ErrorPage";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route exact path="/cart" component={CartPage} />
         <ProtectedRoute exact path="/favourites" component={FavouritesPage} />
         <ProtectedRoute exact path="/profile" component={ProfilePage} /> 
+        <Route path='*' component={ErrorPage} />
       </Switch>
     </div>
   );

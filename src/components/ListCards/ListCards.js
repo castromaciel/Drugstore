@@ -53,7 +53,6 @@ function ListCards({brand, setUpdateFavs, setFavCount}) {
           initialSlide: 5,
           infinite: true,
           dots: false,
-
         }
       }
     ]
