@@ -7,7 +7,6 @@ import UserLogged from '../UserLogged/UserLogged'
 
 function Navbar({updateFavs, favCount, setFavCount}) {
 
-  // const [favCount, setFavCount] = useState()
   const [cartCount, setCartCount] = useState() 
   const [isLogged, setIsLogged] = useState(false)
   const token = localStorage.getItem('token')

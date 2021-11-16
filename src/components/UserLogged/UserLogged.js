@@ -12,7 +12,7 @@ function UserLogged({user}) {
     return (
     <div className="dropdown me-0 m-md-3 ">
       <button className="d-flex align-items-center btn btn-sm dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-        <img src="https://blogs.hoy.es/en-red-hoy/wp-content/uploads/sites/59/2014/02/silueta-perfil.-cargollective.com-jpg.jpg" alt="" width="32" height="32" className="rounded-circle me-2"/>
+        <img src={user.img} alt="" width="32" height="32" className="rounded-circle me-2"/>
         <h5 className="my-0">{user.username}</h5>
       </button>
       <ul className="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton1">
