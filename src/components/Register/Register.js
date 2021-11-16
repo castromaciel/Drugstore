@@ -4,7 +4,7 @@ import './register.css'
 
 function Register() {
   
-  const[registerErrors,setRegisterErrors] = useState([])
+  const[registerErrors,setregisterErrors] = useState([])
   const {register, handleSubmit, formState: {errors}, getValues } = useForm({ defaultValues: { username:"", email:"", emailConfirmation:"", password:"", passwordConfirmation:""}})
 
   const onSubmit = data => {
@@ -21,10 +21,7 @@ function Register() {
       },
     })
       .then(res => res.json())
-      .then(json => {
-        console.log(json)
-        setRegisterErrors(json.errors)
-      })  
+      .then(json => setregisterErrors(json.errors))  
   }
   return (
     <div>
@@ -34,7 +31,7 @@ function Register() {
           <input type="text" className="form-control" placeholder="Username" name="username" {...register("username", {required: true, minLength:5, maxLength:15})} />
           {errors?.username?.type === "required" && <span><i className="bi bi-exclamation-octagon-fill me-2"></i>This field is required</span>}
           {errors?.username?.type === "minLength" && <span><i className="bi bi-exclamation-octagon-fill me-2"></i>Your username must be at least 5 characters long</span>}
-          { registerErrors.map(error => 
+          { registerErrors?.map(error => 
             (error?.param === 'username' && <span><i className="bi bi-exclamation-octagon-fill me-2"></i>{error.msg}</span>))
           }
         </div>
@@ -44,7 +41,7 @@ function Register() {
             <input type="text" className="form-control" placeholder="example@example.com" name="email" {...register("email", {required: true, pattern:/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/})} />
             {errors?.email?.type === "required" && <span><i className="bi bi-exclamation-octagon-fill me-2"></i>This field is required</span>}
             {errors?.email?.type === 'pattern' && <span><i className="bi bi-exclamation-octagon-fill me-2"></i>Insert a valid mail</span> }
-            { registerErrors.map(error => 
+            { registerErrors?.map(error => 
               (error?.param === 'email' && <span><i className="bi bi-exclamation-octagon-fill me-2"></i>{error.msg}</span>))
             }
           </div>
@@ -61,7 +58,6 @@ function Register() {
             {errors?.emailConfirmation?.type === "required" && <span><i className="bi bi-exclamation-octagon-fill me-2"></i>This field is required</span>}
             {errors?.emailConfirmation?.type === 'pattern' && <span><i className="bi bi-exclamation-octagon-fill me-2"></i>Insert a valid mail</span> }
             {errors?.emailConfirmation?.type === 'matchesPreviousEmail' && <span><i className="bi bi-exclamation-octagon-fill me-2"></i>Email should match!</span>}
-            
           </div>
         </div>
         <div className="d-flex flex-column flex-lg-row">

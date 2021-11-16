@@ -1,7 +1,9 @@
 import React from 'react'
-import oferta_andromaco from '../../assets/img/oferta_andromaco.jpg'
-import oferta_teva from '../../assets/img/oferta_teva.jpg'
-import oferta_gador from '../../assets/img/oferta_gador.jpg'
+import oferta_andromaco_do from '../../assets/img/oferta_andromaco_do.jpeg'
+import oferta_teva_do from '../../assets/img/oferta_teva_do.jpg'
+import oferta_gador_do from '../../assets/img/oferta_gador_do.jpeg'
+import oferta_biol_do from '../../assets/img/oferta_biol_do.jpeg'
+
 
 function Carousel() {
   return (
@@ -11,6 +13,7 @@ function Carousel() {
           <button type="button" data-bs-target="#heroIndicators" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
           <button type="button" data-bs-target="#heroIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
           <button type="button" data-bs-target="#heroIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          <button type="button" data-bs-target="#heroIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
         </div>
         <div className="carousel-inner">
           <div className="carousel-item active">
@@ -19,16 +22,22 @@ function Carousel() {
                 <h5>¡Productos Destacados!</h5>
               </div>
             </div>
-            <img src={oferta_andromaco} className="d-block w-100" alt="..." />
+            <img src={oferta_andromaco_do} className="d-block w-100" alt="..." />
           </div>
           <div className="carousel-item">
-            <img src={oferta_gador} className="d-block w-100" alt="..." />
+            <img src={oferta_gador_do} className="d-block w-100" alt="..." />
             <div className="carousel-caption">
               <h5>¡Productos Destacados!</h5>
             </div>
           </div>
           <div className="carousel-item">
-            <img src={oferta_teva} className="d-block w-100" alt="..." />
+            <img src={oferta_teva_do} className="d-block w-100" alt="..." />
+            <div className="carousel-caption">
+              <h5>¡Productos Destacados!</h5>
+            </div>
+          </div>
+          <div className="carousel-item">
+            <img src={oferta_biol_do} className="d-block w-100" alt="..." />
             <div className="carousel-caption">
               <h5>¡Productos Destacados!</h5>
             </div>
