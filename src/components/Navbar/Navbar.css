@@ -1,0 +1,22 @@
+.item-navbar:hover{
+  background-color: pink;
+  border-radius:10rem;
+}
+.nav-item{
+  border-radius: 10rem;
+  margin: 0.4rem;
+}
+.nav-item:hover{
+  background-color: rgb(25, 181, 192);
+}
+.item-navbar .nav-link i{
+  color:rgb(0, 0, 0)
+}
+.right-icons{
+  border-radius: 2rem;
+  background-color: pink;
+}
+.i-right-icons:hover{
+  background-color: white;
+}
+  
