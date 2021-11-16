@@ -47,7 +47,7 @@ function Login() {
         </div>
         {logged?  true : (
           <div className="form-group fs-5 d-flex justify-content-center">
-            <span><i className="bi bi-exclamation-octagon-fill me-2"></i>Email or Password invalids.</span>
+            <span><i className="bi bi-exclamation-octagon-fill me-2"></i>Correo o contraseña inválidos</span>
           </div>
         )}
         <div className="mx-auto pt-2 form-group d-flex justify-content-end">
