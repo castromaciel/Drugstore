@@ -66,7 +66,8 @@ function ListCards({brand, setUpdateFavs, setFavCount}) {
         .then(res => res.json())
         .then(data => setFavItems(data.favs))
     }
-  }, [userLog,setProducts])
+    //eslint-disable-next-line
+  }, [setProducts])
 
   useEffect(() => {
     if(favItems) {
