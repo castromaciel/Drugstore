@@ -23,14 +23,14 @@ function ListCards({brand, setUpdateFavs, setFavCount}) {
     speed: 500,
     slidesToShow: 5,
     slidesToScroll: 5,
-    initialSlide: 5,
+    initialSlide: 0,
     responsive: [
       {
         breakpoint: 1025,
         settings: {
           slidesToShow: 3,
           slidesToScroll: 3,
-          initialSlide: 5,
+          initialSlide: 0,
           infinite: true,
           dots: true
         }
@@ -40,7 +40,7 @@ function ListCards({brand, setUpdateFavs, setFavCount}) {
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
-          initialSlide: 5,
+          initialSlide: 0,
           infinite: true,
           dots: false,
         }
@@ -50,7 +50,7 @@ function ListCards({brand, setUpdateFavs, setFavCount}) {
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
-          initialSlide: 5,
+          initialSlide: 0,
           infinite: true,
           dots: false,
         }
@@ -66,8 +66,7 @@ function ListCards({brand, setUpdateFavs, setFavCount}) {
         .then(res => res.json())
         .then(data => setFavItems(data.favs))
     }
-    // eslint-disable-next-line
-  }, [setProducts])
+  }, [userLog,setProducts])
 
   useEffect(() => {
     if(favItems) {

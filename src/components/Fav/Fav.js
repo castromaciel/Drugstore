@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import { NavLink } from 'react-router-dom'
 import './fav.css'
 function Fav( {setUpdateFavs, setFavCount}) {
   const userLog = JSON.parse(localStorage.getItem('user'))
@@ -58,7 +59,7 @@ useEffect(() => {
             </div>
             <div className="col-12 col-lg-2 d-flex flex-lg-column flex-sm-row justify-content-center">
               <button className="my-lg-1 mx-1 btn btn-danger" data-id={p._id} onClick={deleteFav}><i className="bi bi-x me-1"></i>Eliminar</button>
-              <button className="my-lg-1 mx-1 btn btn-success"><i className="bi bi-cart-fill position-relative me-1"></i>Comprar</button>
+              <NavLink exact to='/cart' className="my-lg-1 mx-1 btn btn-success"><i className="bi bi-cart-fill position-relative me-1"></i>Añadir</NavLink>
             </div>
           </section>
         )

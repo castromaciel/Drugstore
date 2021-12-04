@@ -9,7 +9,9 @@ function ProductPage() {
     <div>
       <Ban />
       <Navbar favCount={favCount} setFavCount={setFavCount} />
-      <h1>Product id</h1>
+      <div className="my-5 py-5 ">
+        <h1 className="text-center">Página no disponible! 😞</h1>
+      </div>
       <Footer/>
     </div>
   )

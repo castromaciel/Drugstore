@@ -35,9 +35,10 @@ function Register() {
       <form className="container" onSubmit={handleSubmit(onSubmit)}>
         <div className="mx-auto pt-2 form-group">
           <h5 className="ps-2">Usuario</h5>
-          <input type="text" className="form-control" placeholder="Nombe de usuario" name="username" {...register("username", {required: true, minLength:5, maxLength:15})} />
+          <input type="text" className="form-control"  minLength='5' maxLength='15' placeholder="Nombe de usuario" name="username" {...register("username", {required: true, minLength:5, maxLength:15})} />
           {errors?.username?.type === "required" && <span><i className="bi bi-exclamation-octagon-fill me-2"></i>Este campo es obligatorio</span>}
           {errors?.username?.type === "minLength" && <span><i className="bi bi-exclamation-octagon-fill me-2"></i>Your username must be at least 5 characters long</span>}
+          {errors?.username?.type === "maxLength" && <span><i className="bi bi-exclamation-octagon-fill me-2"></i>Your username must not exceed 15 characters</span>}
           { registerErrors?.map(error => 
             (error?.param === 'username' && <span><i className="bi bi-exclamation-octagon-fill me-2"></i>{error.msg}</span>))
           }

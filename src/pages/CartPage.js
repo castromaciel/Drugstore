@@ -11,7 +11,7 @@ function CartPage() {
       <Ban />
       <Navbar favCount={favCount} setFavCount={setFavCount}/>
       <div className="my-5 py-5 ">
-        <h1 className="text-center">No la pudimos hacer! 😞</h1>
+        <h1 className="text-center">Página no disponible! 😞</h1>
       </div>
       <ToTopButton />
       <Footer/>
