@@ -29,7 +29,7 @@ function Cards( {parentCallback ,img, name, id, favs} ) {
             <div className="position-absolute top-0 end-0 btn btn-sm" onClick={onClickFavourite}>
               { isFavourite? (<i className="bi bi-heart-fill fs-4 text-danger" data-id={id}></i>) : (<i className="bi bi-heart fs-4 text-danger" data-id={id}></i>) }
             </div>
-            <NavLink exact to='/cart' className="position-absolute bottom-0 end-0 w-100 btn btn-primary bg-gradient"><i class="bi bi-cart-fill me-2"></i>Añadir</NavLink>
+            <NavLink exact to='/cart' className="position-absolute bottom-0 end-0 w-100 btn btn-primary bg-gradient"><i className="bi bi-cart-fill me-2"></i>Añadir</NavLink>
           </div>
         }
       </div>
