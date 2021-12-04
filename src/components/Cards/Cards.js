@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import { NavLink } from 'react-router-dom';
 import swal from 'sweetalert';
 import "../Cards/cards.css";
-function Cards( {parentCallback ,img, name, brand, index, id, favs} ) {
+function Cards( {parentCallback ,img, name, id, favs} ) {
 
   const [isHovering, setIsHovering] = useState(false)
   const [isFavourite, setIsFavourite] = useState(false)
@@ -21,7 +21,9 @@ function Cards( {parentCallback ,img, name, brand, index, id, favs} ) {
   return (
     <div className="d-flex flex-column align-items-center">
       <div className="card position-relative" onMouseOver={handleMouseOver} onMouseLeave={handleMouseLeave} >
-        <img src={img} className="card-img-top"alt={name} />
+        <NavLink exact to='/product'>
+          <img src={img} className="card-img-top"alt={name} />
+        </NavLink>
         {isHovering &&
           <div>
             <div className="position-absolute top-0 end-0 btn btn-sm" onClick={onClickFavourite}>
