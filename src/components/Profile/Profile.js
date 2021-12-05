@@ -9,7 +9,7 @@ function Profile() {
   const {register, handleSubmit, formState: {errors} } = useForm()
   
   const onSubmit = async data => {
-    await fetch(`http://localhost:8000/users/${userLog.id}`,{
+    await fetch(`https://apidrogueriaoasis.herokuapp.com/users/${userLog.id}`,{
       method: 'PUT',
       body: JSON.stringify({
         img: data.profilephoto,
@@ -34,7 +34,7 @@ function Profile() {
   }
 
   useEffect(() => {
-    fetch(`http://localhost:8000/users/${userLog.id}`)
+    fetch(`https://apidrogueriaoasis.herokuapp.com/users/${userLog.id}`)
       .then(res => res.json())
       .then(user => {
         setUser(user)

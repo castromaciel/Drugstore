@@ -5,7 +5,7 @@ function CategoriesButton({handleChange}) {
   const [brands, setBrands] = useState([])
 
   useEffect(()=> {
-    fetch('http://localhost:8000/products')
+    fetch('https://apidrogueriaoasis.herokuapp.com/products')
       .then(res => res.json())
       .then(data => {
         setBrands([...new Set(data.map(product => product.brand))])

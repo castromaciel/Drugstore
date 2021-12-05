@@ -13,7 +13,7 @@ function Navbar({updateFavs, favCount, setFavCount}) {
   useEffect(()=>{
     if(token) {
       setIsLogged(true)
-      fetch(`http://localhost:8000/users/${userLog.id}`)
+      fetch(`https://apidrogueriaoasis.herokuapp.com/users/${userLog.id}`)
         .then(res => res.json())
         .then(user => setFavCount(user.favs.length))
       }

@@ -15,14 +15,14 @@ function Fav( {setUpdateFavs, setFavCount}) {
   }
 
   useEffect(() => {
-    fetch(`http://localhost:8000/users/${userLog.id}`)
+    fetch(`https://apidrogueriaoasis.herokuapp.com/users/${userLog.id}`)
       .then(res => res.json())
       .then(data => setLoadFavs(data.favs))
   }, [userLog.id, setLoadFavs])
 
   useEffect(()=> {
     if(loadFavs) {
-    fetch(`http://localhost:8000/products/`)
+    fetch(`https://apidrogueriaoasis.herokuapp.com/products/`)
       .then(res=> res.json())
       .then(products => 
         setItemFav(products.filter(p => loadFavs.includes(p._id)))
@@ -32,7 +32,7 @@ function Fav( {setUpdateFavs, setFavCount}) {
 
 useEffect(() => {
   if(loadFavs) {
-    fetch(`http://localhost:8000/users/${userLog.id}`,{
+    fetch(`https://apidrogueriaoasis.herokuapp.com/users/${userLog.id}`,{
       method:'PUT',
       body: JSON.stringify({
         favs: loadFavs

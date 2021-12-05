@@ -10,7 +10,7 @@ function Register() {
 
   const onSubmit = data => {
 
-    fetch(`http://localhost:8000/users`,{
+    fetch(`https://apidrogueriaoasis.herokuapp.com/users`,{
       method: 'POST',
       body: JSON.stringify({
         username: data.username,

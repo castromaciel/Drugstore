@@ -58,11 +58,11 @@ function ListCards({brand, setUpdateFavs, setFavCount}) {
     ]
   }
   useEffect(() => {
-    fetch('http://localhost:8000/products')
+    fetch('https://apidrogueriaoasis.herokuapp.com/products')
       .then(res => res.json())
       .then(data => setProducts(data))
     if(userLog){
-      fetch(`http://localhost:8000/users/${userLog.id}`)
+      fetch(`https://apidrogueriaoasis.herokuapp.com/users/${userLog.id}`)
         .then(res => res.json())
         .then(data => setFavItems(data.favs))
     }
@@ -71,7 +71,7 @@ function ListCards({brand, setUpdateFavs, setFavCount}) {
 
   useEffect(() => {
     if(favItems) {
-      fetch(`http://localhost:8000/users/${userLog.id}`,{
+      fetch(`https://apidrogueriaoasis.herokuapp.com/users/${userLog.id}`,{
         method:'PUT',
         body: JSON.stringify({
           favs: favItems
